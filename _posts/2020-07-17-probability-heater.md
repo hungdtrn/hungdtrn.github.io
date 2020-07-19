@@ -16,4 +16,4 @@ As numbers are more reliable than feelings, there should be a numerical way that
 
 ### Probability: the logic of uncertainty
 
-Specifically, let's denote the event that we are uncertain about, whether the heater is decent or not, as A. Then $$P(A)$$ is a number indicating my degree of belief in such event, which ranges from 0 (this heater is definitely crap) to 1 (this heater is definitely a decent heater).
+Specifically, let's denote the event that we are uncertain about, whether the heater is decent or not, as A. Then \(P(A)\) is a number indicating my degree of belief in such event, which ranges from 0 (this heater is definitely crap) to 1 (this heater is definitely a decent heater).
