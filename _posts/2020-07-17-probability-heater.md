@@ -16,4 +16,14 @@ As numbers are more reliable than feelings, there should be a numerical way that
 
 ### Probability: the logic of uncertainty
 
-Specifically, let's denote the event that we are uncertain about, whether the heater is decent or not, as A. Then $$P(A)$$ is a number indicating my degree of belief in such event, which ranges from 0 (this heater is definitely crap) to 1 (this heater is definitely a decent heater).
+Specifically, let's denote the event that we are uncertain about, whether the heater is decent or not, as A. Then $$P(A)$$ is a number indicating my degree of belief in such event, which ranges from 0 (this heater is definitely crap) to 1 (this heater is definitely a decent heater).We want to somehow compute this number from the comments and feedback from online users on Amazon. Using the law of total probability, we have:
+$$P(A)=P(A|positive feedback)P(positive feedback) + P(A|negative feedback)P(negative feedback),$$
+Where P(positive feedback) and P(negative feedback) are the probability of positive and negative feedbacks on the product website, we have $$P(positive feedback) + P(negative feedback) = 1$$. Given a feedback on amazon, how can we decide if it is positive or negative?. There is a whole line of research called sentimental analysis that aim to answer such question. However, for simplicity, a feedback is considered positive if it has at least 3 in 5 stars and negative otherwise. 
+
+![Amazon stars](/images/2020-07-17-probability-heater/stars.png)
+
+From the website, we have $$P(positive feedback)=P(5 stars) + P(4 stars) + P(3 stars)=89%$$, $$P(negative feedback)=1 - 89% = 11%$$. Hence, we have
+
+$$P(A)=P(A|positive feedback) \cdot 0.89 + P(A|negative feedback) * 0.11$$
+
+The remaning part of the formula, P(A|positive feedback) and P(A|negative feedback) are conditional probabilities, the perfect tool that we use to update our probability number. Specifically.
