@@ -24,8 +24,8 @@ Where P(positive_feedback) and P(negative_feedback) are the probability of posit
 
 ![Amazon stars](/images/2020-07-17-probability-heater/stars.png)
 
-From the website, we have $$P(positive_feedback)=P(5stars) + P(4stars) + P(3stars)=0.89$$, $$P(negative_feedback)=1 - 89% = 11%$$. Hence, we have
+From the website, we have $$P(positive_feedback)=P(5stars) + P(4stars) + P(3stars)=0.89$$, $$P(negative_feedback)=1-0.89=0.11$$. Hence, we have
 
 $$P(A)=P(A|positive_feedback) \cdot 0.89 + P(A|negative_feedback) * 0.11$$
 
-The remaning part of the formula, P(A|positive_feedback) and P(A|negative_feedback) are conditional probabilities, the perfect tool that we use to update our probability number. Specifically.
+The remaning part of the formula, $$P(A|positive_feedback)$$ and $$P(A|negative_feedback)$$ are conditional probabilities, the perfect tool that we use to update our probability number. Specifically.
