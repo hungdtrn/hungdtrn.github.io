@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Inference in Graphical Model
+mathjax: true
 ---
 
 Observe some nodes in the graph. Find the posterior distribution on one or more subset of other nodes

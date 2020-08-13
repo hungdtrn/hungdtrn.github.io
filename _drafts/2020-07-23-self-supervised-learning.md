@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Self-supervised learning for image representation
+mathjax: true
 ---
 
 1. Definition and examples

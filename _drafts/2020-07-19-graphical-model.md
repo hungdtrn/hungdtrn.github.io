@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Graphical Model
+mathjax: true
 ---
 
 1. Why

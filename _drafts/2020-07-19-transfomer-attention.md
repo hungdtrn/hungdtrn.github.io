@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What I learned from Attention Is All You Need - Transfomer and Attention
+mathjax: true
 ---
 
 ### Attention
