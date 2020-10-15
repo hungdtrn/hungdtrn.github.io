@@ -18,7 +18,7 @@ mathjax: true
     - A graphical model is a graph, where each node represent a random variable, each edge express probabilistic relationships between variables
     - The joint distribution of these variables are represented by a graph.
     - Why graphical model?
-        - Better representation of 
+        - Better representation of conditional probability
 3. Conditional Independence
     - 3 rules
     - D-separtion
