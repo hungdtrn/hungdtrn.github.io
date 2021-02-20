@@ -1,81 +1,31 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+  <head>
+    {% include head.html %}
+    {% include scripts/mathjax.html %}
+  </head>
 
-  {% include meta.html %}
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
 
-  <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <!-- Header -->
 
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
-    href="{{ site.baseurl }}/feed.xml" />
+    {% include header.html %}
 
-  <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <!-- Content -->
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-</head>
-
-<body>
-  <div class="wrapper-masthead">
-    <div class="container">
-      <header class="masthead clearfix">
-        <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-        <div class="site-info">
-          <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-          <p class="site-description">{{ site.description }}</p>
-        </div>
-
-        <nav>
-          <a href="{{ site.baseurl }}/">Blog</a>
-          <a href="{{ site.baseurl }}/about">About</a>
-        </nav>
-      </header>
+    <div class="container mt-5">
+      {{ content }}
     </div>
-  </div>
 
-  <div id="main" role="main" class="container">
-    {{ content }}
-  </div>
+    <!-- Footer -->
 
-  <div class="wrapper-footer">
-    <div class="container">
-      <footer class="footer">
-        {% include svg-icons.html %}
-      </footer>
-    </div>
-  </div>
+    {% include footer.html %}
 
-  {% include analytics.html %}
+  </body>
 
-  {% if page.mathjax %}
-  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_CHTML"></script>
-  <!-- <script>
-    MathJax = {
-      options: {
-        renderActions: {
-          find: [10, function (doc) {
-            for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = { node: text, delim: '', n: 0 };
-              math.end = { node: text, delim: '', n: 0 };
-              doc.math.push(math);
-            }
-          }, '']
-        }
-      }
-    };
-  </script>
-  <script id="MathJax-script" type="text/javascript" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
-  {% endif %}
-</body>
+  {% include scripts/bootstrap.html %}
+  {% include scripts/mansory.html %}
+  {% include scripts/misc.html %}
 
 </html>
