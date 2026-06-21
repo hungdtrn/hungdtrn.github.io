@@ -8,3 +8,4 @@ If I do nothing now, I am afraid it might hurt my career permanently. Therefore,
 [[Incremental Residual Concept Bottleneck Models]
 - 21 June 2026 - Day 2
 [[Having Principle]]
+[[How to take notes when reading]]
