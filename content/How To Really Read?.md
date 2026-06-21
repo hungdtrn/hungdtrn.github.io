@@ -7,7 +7,7 @@ To be better at reading, the first step is to read daily. Reading is a mental ex
 According to the summary of Mortimer Adlers's How to read a book, there are four level of readings to be practised:
 - Level 1 - Elementary Reading. This is basic reading: recognising words and following sentences. This is the level I use most often now.
 - Level 2 - Inspection Reading. This is reading to know the main ideas and deciding whether it's worth spending more time. Most materials are not relevant enough to deserve full analytical reading, so inspection reading helps me understand the main ideas while saving times for the most important materials. 
-- Level 3 - Analytical Reading. This is serious reading for understanding. It requires mental work and time, so I need to selective about what I read deeply. At the end of a deep read, I need to do four things:
+- Level 3 - Analytical Reading. This is serious reading for understanding. It requires mental work and time, so I need to selective about what I read deeply, and need to take [[How to take notes when reading|notes]] when reading. At the end of a deep read, I need to do four things:
 	- Classify the book
 	- Summarise the book
 	- Define the main points with order and relations
