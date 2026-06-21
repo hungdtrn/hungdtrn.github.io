@@ -5,4 +5,6 @@ If I do nothing now, I am afraid it might hurt my career permanently. Therefore,
 - 20 Jun 2026 - Day 1
 [[How To Really Read?]]
 [[Concept Embedding Models - Beyond the Accuracy-Explainability Trade-Off | Concept Embedding Models]]
-[[Incremental Residual Concept Bottleneck Models]]
+[[Incremental Residual Concept Bottleneck Models]
+- 21 June 2026 - Day 2
+[[Having Principle]]
