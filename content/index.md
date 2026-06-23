@@ -2,10 +2,18 @@ As a knowledge worker, I feel the existential threat when I avoid thinking prope
 
 If I do nothing now, I am afraid it might hurt my career permanently. Therefore, I will improve my thinking by reading and writing one essay a day.
 
-- 20 Jun 2026 - Day 1
-[[How To Really Read?]]
-[[Concept Embedding Models - Beyond the Accuracy-Explainability Trade-Off | Concept Embedding Models]]
-[[Incremental Residual Concept Bottleneck Models]]
+- 23 June 2026 - Day 4
+[[GLM5.2]]
+[[i1 - A Simple and Fully Open Recipe for Strong Text-to-Image Models]]
+
+- 22 June 2026 - Day 3
+[[Rules for a productive workday]]
+[[Keep a work note]]
+
 - 21 June 2026 - Day 2
 [[Having Principle]]
 [[How to take notes when reading]]
+- 20 June 2026 - Day 1
+[[How To Really Read?]]
+[[Concept Embedding Models - Beyond the Accuracy-Explainability Trade-Off | Concept Embedding Models]]
+[[Incremental Residual Concept Bottleneck Models]]
