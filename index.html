@@ -1,134 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- saved from url=(0222)file:///Users/hungt/Library/Application%20Support/Claude/local-agent-mode-sessions/54c70c1f-6c82-4365-9860-a0898bd1ee9f/966e9dcb-1ce4-4a9d-9138-841f6f2a62e4/local_f3862b25-07de-455c-9f81-2938d82ff33a/outputs/countdown.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown</title>
+  <link href="./css2" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="
-    This is Dr. Hung Tran profile page.
-    ">
-    <meta name="author" content="
-    Hung Tran">
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Quattrocento', serif;
+      color: #f2eeeb;
+    }
 
-    <title>Hung Tran</title>
+    .countdown {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      text-align: center;
+    }
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    .unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-    <!-- Custom styles for this template -->
-    <link href="css/portfolio-item.css" rel="stylesheet">
+    .number {
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
 
-    <!-- Flag -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    .label {
+      font-size: clamp(0.65rem, 2vw, 0.9rem);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
 
+    .separator {
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 700;
+      line-height: 1;
+      opacity: 0.4;
+      padding-top: 0;
+      align-self: flex-start;
+    }
+
+    .done {
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+  </style>
 </head>
-
-<body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button> 
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="publications.html">Publications</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="outreach.html">Outreach Activities</a>
-                </li> -->
-            </ul>
+<body style="overscroll-behavior-x: auto;">
+  <div id="timer">
+        <div class="countdown">
+          
+            <div class="unit">
+              <span class="number">18</span>
+              <span class="label">Days</span>
+            </div>
+            <span class="separator">:</span>
+          
+          <div class="unit">
+            <span class="number">12</span>
+            <span class="label">Hours</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="unit">
+            <span class="number">49</span>
+            <span class="label">Minutes</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="unit">
+            <span class="number">54</span>
+            <span class="label">Seconds</span>
+          </div>
         </div>
-    </div>
-</nav>
+      </div>
 
-<!-- Page Content -->
-<div class="container">
-    <h1 class="my-4">
-    </h1>
+  <script>
+    // Target: 10:00:00 AM on August 2, 2026, Vietnam Time (UTC+7)
+    const target = new Date('2026-08-02T03:00:00Z'); // 10:00 AM ICT = 03:00 UTC
 
-    <!-- Portfolio Item Row -->
+    function pad(n) {
+      return String(Math.floor(n)).padStart(2, '0');
+    }
 
-    <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
-            
-            <div style="vertical-align:middle; text-align:center">
-                <img class="img-responsive" src="img/hung_tran.png" style="max-height: 160px; border-radius:2%">
+    function render() {
+      const now = new Date();
+      const diff = target - now;
+      const el = document.getElementById('timer');
+
+      if (diff <= 0) {
+        el.innerHTML = '<div class="done">It\'s time!</div>';
+        return;
+      }
+
+      const days    = Math.floor(diff / 86400000);
+      const hours   = Math.floor((diff % 86400000) / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+
+      const showDays = days > 0;
+
+      el.innerHTML = `
+        <div class="countdown">
+          ${showDays ? `
+            <div class="unit">
+              <span class="number">${pad(days)}</span>
+              <span class="label">Days</span>
             </div>
-
-            <hr>
-
-            <div class="row author_urls_wrapper">
-                <ul>
-                    <li><a href="https://scholar.google.co.jp/citations?user=0irkZtkAAAAJ&hl=en"> Google Scholar </a></li>
-                    <li><a href="resources/cv/DuyHungTran_CV.pdf"> Curriculum Vitae </a></li>
-                    <li><a href="https://www.linkedin.com/in/hungdtrn/"> LinkedIn </a></li>
-                    <li><a href="https://github.com/hungdtrn"> Github </a></li>
-                </ul>
-            </div>
-            
-            <hr>
-            
-            <div id="counter" style="vertical-align:middle; text-align:center">
-                <a href="https://clustrmaps.com/site/1bwdr"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=WNjdbCbkG_nQ_ntI1lU_eOCP02Di8nVuI29ZLA1Wkbc&cl=ffffff" /></a>
-            </div>
-            <hr>
+            <span class="separator">:</span>
+          ` : ''}
+          <div class="unit">
+            <span class="number">${pad(hours)}</span>
+            <span class="label">Hours</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="unit">
+            <span class="number">${pad(minutes)}</span>
+            <span class="label">Minutes</span>
+          </div>
+          <span class="separator">:</span>
+          <div class="unit">
+            <span class="number">${pad(seconds)}</span>
+            <span class="label">Seconds</span>
+          </div>
         </div>
-        <div class="col-lg-9 col-md-9 col-sm-9">
-            
-            <div>
-                <h3> Hung Tran </h3>
-                <p>
-                    Ph.D. Student <br>
-                    <a href="https://a2i2.deakin.edu.au/">Applied Artificial Intelligence Institute</a> <br>
-                    Deakin University, Australia <br>
-                    <br>
-                    <b>Email: </b> <i>hung.dtrn@gmail.com</i> / <i>tduy@deakin.edu.au</i></p>
-                </p>
-            </div>
+      `;
+    }
 
-            <div>
-                <h4 class="page-header"> Research Interests </h4>
-                <p>
-                    My research interests focus on deep learning techniques for <i>visual perception</i>,  <i>human behavior understanding</i>, and <i>knowledge extraction from languge models</i>. These capabilities are the key elements required of the next generation of virtual assistant systems. Real-world applications of these systems include security , autonomous driving, and healthcare.
-                    </p>
-                <br>
-            </div>
+    render();
+    setInterval(render, 1000);
+  </script>
 
-            <div>
-                <h4 class="page-header"> Latest News </h4>
-                <li> [Nov 30, 2023] My team got honourable mentioned in the Melbourne AI/ML Hackathon. Our solution was building AIDE, Aged care assistant and companion using Large Language Models. Find out more <a href="https://github.com/hungdtrn/aide-aiml/">here</a></li>
-                <li> [July, 2023] My presentation has won the <b>people choice</b> and <b>runner up</b> awards at A2I2 3MT competition</li>
-                <li> [July 14, 2023] Our paper <a href="https://arxiv.org/abs/2307.12729">Persistent-Transient Duality: A Multi-mechanism Approach for Modeling Human-Object Interaction</a> has ben accepted accepted at <a href="https://iccv2023.thecvf.com//">ICCV 2023</a>. 
-                </li>
-                <li> [Jun 16, 2022] Our paper <a href="https://arxiv.org/abs/2204.09875">Persistent-Transient Duality in Human Behavior Modeling</a> has been accepted at <a href="https://sites.google.com/view/ieeecvf-cvpr2022-precognition/">CVPR 2022 Precognition Workshop</a>.
-                </li>
-                <li> [Oct 31, 2020] Our paper <a href="https://arxiv.org/abs/2011.02751">Goal-driven Long-Term Trajectory Prediction</a> has been accepted accepted at <a href="https://openaccess.thecvf.com/WACV2020/">WACV 2020</a>.
-                </li>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- /.row -->
-
-</div>
-<!-- /.container -->
-
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
+</body></html>
